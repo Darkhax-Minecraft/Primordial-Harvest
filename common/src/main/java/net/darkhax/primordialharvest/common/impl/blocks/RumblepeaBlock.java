@@ -3,7 +3,6 @@ package net.darkhax.primordialharvest.common.impl.blocks;
 import net.darkhax.primordialharvest.common.impl.Content;
 import net.darkhax.primordialharvest.common.impl.Helper;
 import net.darkhax.primordialharvest.common.impl.PrimordialHarvest;
-import net.darkhax.primordialharvest.common.mixin.AccessorCropBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -79,7 +78,7 @@ public class RumblepeaBlock extends CropBlock {
         if (level.getRawBrightness(pos, 0) >= 9) {
             final int currentAge = this.getAge(state);
             if (currentAge < this.getMaxAge()) {
-                if (random.nextInt((int)(25f / AccessorCropBlock.getGrowthSpeed(this, level, pos)) + 1) == 0) {
+                if (random.nextInt((int)(25f / Helper.GET_GROWTH_SPEED.apply(state, level, pos)) + 1) == 0) {
                     level.setBlock(pos, this.getStateForAge(currentAge + 1), 2);
                 }
             }

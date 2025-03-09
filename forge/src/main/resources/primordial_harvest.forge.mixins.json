@@ -4,7 +4,9 @@
   "package": "net.darkhax.primordialharvest.forge.mixin",
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_18",
-  "mixins": [],
+  "mixins": [
+    "AccessorCropBlock"
+  ],
   "client": [],
   "server": [],
   "injectors": {

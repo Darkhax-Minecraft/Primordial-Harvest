@@ -1,5 +1,6 @@
 package net.darkhax.primordialharvest.common.impl;
 
+import net.darkhax.bookshelf.common.api.function.TriFunction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
@@ -7,6 +8,7 @@ import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -22,7 +24,7 @@ import java.util.List;
 
 public class Helper {
 
-    private static final AABB INSIDE_CAULDRON = Block.box(2, 4, 2, 14, 16, 14).toAabbs().getFirst();
+    public static TriFunction<BlockState, BlockGetter, BlockPos, Float> GET_GROWTH_SPEED;
 
     public static void dropLoot(Level level, BlockPos pos, ResourceKey<LootTable> tableId, Player player, ItemStack tool) {
         if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
