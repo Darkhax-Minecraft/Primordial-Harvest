@@ -1,0 +1,28 @@
+{
+  "name": "Rumblepea",
+  "category": "primordial_harvest:root",
+  "icon": "primordial_harvest:rumblepea",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "primordial_harvest:rumblepea",
+      "text": "The rumblepea is a temperamental crop that must be handled with care. Its delicate root system attracts bacteria that can boost nearby crop growth. The rumblepea produces a highly explosive substance that it uses to deter predators and trampling."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "primordial_harvest:rumblepea",
+      "text": "While the rumblepea lacks a distinct flavour it has a feint smell of rotten eggs when freshly picked. Eating the fruit will release a gust of steam that may toggle certain blocks like redstone components."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "primordial_harvest:rumblepea_seeds",
+      "text": "The fruit can be processed into more seeds."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "primordial_harvest:gunpowder_from_rumblepea_seeds",
+      "text": "The seeds can be processed into gunpowder."
+    }
+  ]
+}

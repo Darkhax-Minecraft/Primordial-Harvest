@@ -1,0 +1,32 @@
+{
+  "name": "Spireshuck",
+  "category": "primordial_harvest:root",
+  "icon": "primordial_harvest:spireshuck",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "primordial_harvest:spireshuck",
+      "text": "This odd crop sprouts thick spiraling vines that block mobs from passing through. The aroma of a fruiting spireshuck can weaken and repel some undead mobs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The vines produce a large kernel-like accessory fruit. The fruit has a metallic taste and will temporarily sap your energy if eaten. It will also ward off insomnia and phantom attacks."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:potion[minecraft:potion_contents={potion:'minecraft:weakness'}]",
+      "text": "The toxins that cause weakness can be extracted and concentrated by brewing the fruit."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "primordial_harvest:spireshuck_seeds",
+      "text": "The fruit can be processed into more seeds."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "primordial_harvest:pink_dye_from_spireshuck_seeds",
+      "text": "The seeds can be processed into pink dye."
+    }
+  ]
+}

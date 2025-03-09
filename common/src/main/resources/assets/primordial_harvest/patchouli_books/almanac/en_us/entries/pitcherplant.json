@@ -1,0 +1,18 @@
+{
+  "name": "Pitcher Plant",
+  "category": "primordial_harvest:root",
+  "icon": "minecraft:pitcher_plant",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:pitcher_plant",
+      "text": "The pitcher plant is a flower grown from seeds rediscovered by the sniffer. It appears to be carnivorous however its prey has yet to be identified."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:cyan_dye_from_pitcher_plant",
+      "text": "The plant can be processed into cyan dye. No other uses are known at this time."
+    }
+  ]
+}

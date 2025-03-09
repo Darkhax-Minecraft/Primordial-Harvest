@@ -1,0 +1,26 @@
+{
+  "_tabs": "",
+  "itemGroup.primordial_harvest.items": "Primordial Harvest",
+
+  "_items": "",
+  "item.primordial_harvest.paleogourd_seeds": "Paleogourd Seeds",
+  "item.primordial_harvest.paleogourd": "Paleogourd",
+  "item.primordial_harvest.spireshuck_seeds": "Spireshuck Seeds",
+  "item.primordial_harvest.spireshuck": "Spireshuck Fruit",
+  "item.primordial_harvest.rumblepea": "Rumblepea",
+  "item.primordial_harvest.rumblepea_seeds": "Rumblepea Seeds",
+
+  "_effect_items": "",
+  "item.minecraft.potion.effect.primordial_harvest.resistance": "Potion of Fortitude",
+  "item.minecraft.potion.effect.primordial_harvest.long_resistance": "Potion of Fortitude",
+  "item.minecraft.potion.effect.primordial_harvest.strong_resistance": "Potion of Fortitude",
+  "item.minecraft.splash_potion.effect.primordial_harvest.resistance": "Splash Potion of Fortitude",
+  "item.minecraft.splash_potion.effect.primordial_harvest.long_resistance": "Splash Potion of Fortitude",
+  "item.minecraft.splash_potion.effect.primordial_harvest.strong_resistance": "Splash Potion of Fortitude",
+  "item.minecraft.lingering_potion.effect.primordial_harvest.resistance": "Lingering Potion of Fortitude",
+  "item.minecraft.lingering_potion.effect.primordial_harvest.long_resistance": "Lingering Potion of Fortitude",
+  "item.minecraft.lingering_potion.effect.primordial_harvest.strong_resistance": "Lingering Potion of Fortitude",
+  "item.minecraft.tipped_arrow.effect.primordial_harvest.resistance": "Arrow of Fortitude",
+  "item.minecraft.tipped_arrow.effect.primordial_harvest.long_resistance": "Arrow of Fortitude",
+  "item.minecraft.tipped_arrow.effect.primordial_harvest.strong_resistance": "Arrow of Fortitude"
+}

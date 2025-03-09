@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "primordial_harvest:spireshuck"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "primordial_harvest:spireshuck_seeds"
+  }
+}

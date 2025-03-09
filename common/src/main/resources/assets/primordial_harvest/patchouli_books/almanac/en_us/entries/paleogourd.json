@@ -1,0 +1,28 @@
+{
+  "name": "Paleogourd",
+  "category": "primordial_harvest:root",
+  "icon": "primordial_harvest:paleogourd",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "primordial_harvest:paleogourd",
+      "text": "The paleogourd is a curious crop recently uncovered by the sniffer. Its thick roots stabilize nearby soil, preventing trampling and erosion. The largest specimens create vast root networks, securing blocks up to 5 blocks away!"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:potion[minecraft:potion_contents={potion:'primordial_harvest:primordial_harvest.resistance'}]",
+      "text": "While the fruit is safe to eat, it has a grainy texture and tastes strongly of salt. It is better used as a brewing ingredient in the potion of fortitude which reduces damage taken by 20%."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "primordial_harvest:paleogourd_seeds",
+      "text": "The fruit can be processed into more seeds."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "primordial_harvest:brown_dye_from_paleogourd_seeds",
+      "text": "The seeds can be processed into brown dye."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "pink_dye",
+  "ingredients": [
+    {
+      "item": "primordial_harvest:spireshuck_seeds"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:pink_dye"
+  }
+}

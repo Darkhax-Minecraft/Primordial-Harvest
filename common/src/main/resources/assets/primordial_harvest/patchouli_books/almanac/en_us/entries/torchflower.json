@@ -1,0 +1,18 @@
+{
+  "name": "Torchflower",
+  "category": "primordial_harvest:root",
+  "icon": "minecraft:torchflower",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:torchflower",
+      "text": "The torchflower is one of several plants rediscovered thanks to the sniffer. The torchflower is a favourite of the sniffer and can be used in breeding."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:orange_dye_from_torchflower",
+      "text": "The petals of the torchflower can be processed into orange dye. It can also be used in a suspicious stew, giving a short burst of night vision to those brave enough to eat it."
+    }
+  ]
+}

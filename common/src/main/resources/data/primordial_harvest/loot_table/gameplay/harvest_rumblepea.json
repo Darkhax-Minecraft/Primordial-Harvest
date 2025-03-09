@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "primordial_harvest:rumblepea"
+        }
+      ],
+      "rolls": 3.0
+    }
+  ],
+  "random_sequence": "primordial_harvest:gameplay/harvest_rumblepea"
+}

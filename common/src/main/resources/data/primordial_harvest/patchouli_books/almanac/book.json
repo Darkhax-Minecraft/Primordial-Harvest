@@ -1,0 +1,12 @@
+{
+  "name": "Primordial Almanac",
+  "landing_text": "The definitive guide to crops and plants from the forgotten world!",
+  "version": 1,
+  "creative_tab": "primordial_harvest:items",
+  "use_resource_pack": true,
+  "model": "primordial_harvest:almanac",
+  "nameplate_color": "1bc2c2",
+  "show_progress": "false",
+  "pamphlet": true,
+  "filler_texture": "primordial_harvest:textures/gui/book/tria_prima.png"
+}

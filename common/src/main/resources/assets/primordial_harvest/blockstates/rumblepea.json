@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "primordial_harvest:block/rumblepea_stage0"
+    },
+    "age=1": {
+      "model": "primordial_harvest:block/rumblepea_stage1"
+    },
+    "age=2": {
+      "model": "primordial_harvest:block/rumblepea_stage1"
+    },
+    "age=3": {
+      "model": "primordial_harvest:block/rumblepea_stage2"
+    },
+    "age=4": {
+      "model": "primordial_harvest:block/rumblepea_stage2"
+    },
+    "age=5": {
+      "model": "primordial_harvest:block/rumblepea_stage3"
+    },
+    "age=6": {
+      "model": "primordial_harvest:block/rumblepea_stage3"
+    },
+    "age=7": {
+      "model": "primordial_harvest:block/rumblepea_stage4"
+    }
+  }
+}

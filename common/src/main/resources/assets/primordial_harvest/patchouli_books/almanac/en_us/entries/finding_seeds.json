@@ -1,0 +1,17 @@
+{
+  "name": "Finding Seeds",
+  "category": "primordial_harvest:root",
+  "icon": "minecraft:sniffer_egg",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The sniffer is a relic of an ancient ecosystem that has only recently been rediscovered. This remarkable creature possesses the ability to unearth seeds long thought extinct. The sniffer offers botanists an unprecedented glimpse into the flora of a bygone era."
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["primordial_harvest:textures/gui/book/sniffer.png"],
+      "text": "Sniffers hatch from eggs that have been found in the sands of ruins in the warm oceans."
+    }
+  ]
+}
