@@ -1,5 +1,6 @@
 {
 	"parent": "block/paleogourd/block",
+	"render_type": "minecraft:cutout",
 	"textures": {
 		"fruit_top": "primordial_harvest:block/paleogourd/fruit_side",
 		"fruit_side": "primordial_harvest:block/paleogourd/fruit_side",
