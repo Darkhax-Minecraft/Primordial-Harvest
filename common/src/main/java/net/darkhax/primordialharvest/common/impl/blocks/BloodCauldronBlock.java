@@ -12,12 +12,15 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.MapColor;
 import org.jetbrains.annotations.NotNull;
 
 public class BloodCauldronBlock extends LayeredCauldronBlock {
 
+    private static final Properties PROPERTIES = Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops().strength(2.0F).noOcclusion();
+
     public BloodCauldronBlock() {
-        super(Biome.Precipitation.NONE, Content.INTERACTIONS, Properties.ofLegacyCopy(Blocks.CAULDRON));
+        super(Biome.Precipitation.NONE, Content.INTERACTIONS, PROPERTIES);
     }
 
     @Override
