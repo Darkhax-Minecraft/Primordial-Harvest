@@ -2,11 +2,12 @@ package net.darkhax.primordialharvest.common.impl;
 
 import net.darkhax.bookshelf.common.api.data.loot.PoolTarget;
 import net.darkhax.bookshelf.common.api.function.CachedSupplier;
-import net.darkhax.bookshelf.common.api.registry.IContentProvider;
-import net.darkhax.bookshelf.common.api.registry.register.Register;
-import net.darkhax.bookshelf.common.api.registry.register.RegisterItem;
-import net.darkhax.bookshelf.common.api.registry.register.RegisterItemTab;
-import net.darkhax.bookshelf.common.api.registry.register.RegisterLootPoolAdditions;
+import net.darkhax.bookshelf.common.api.registry.ContentProvider;
+import net.darkhax.bookshelf.common.api.registry.adapters.GameRegistryAdapter;
+import net.darkhax.bookshelf.common.impl.registry.adapter.BlockRegistryAdapter;
+import net.darkhax.bookshelf.common.impl.registry.adapter.BlockRenderTypeAdapter;
+import net.darkhax.bookshelf.common.impl.registry.adapter.CreativeModeTabAdapter;
+import net.darkhax.bookshelf.common.impl.registry.adapter.LootPoolAdditionAdapter;
 import net.darkhax.primordialharvest.common.impl.blocks.BloodCauldronBlock;
 import net.darkhax.primordialharvest.common.impl.blocks.PaleogourdBlock;
 import net.darkhax.primordialharvest.common.impl.blocks.RumblepeaBlock;
@@ -23,7 +24,6 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -39,10 +39,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
 import net.minecraft.world.level.gameevent.GameEvent;
 
-import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
-public class Content implements IContentProvider {
+public class Content implements ContentProvider {
 
     public static final ResourceLocation PALEOGOURD_BLOCK_ID = PrimordialHarvest.id("paleogourd");
     public static final Supplier<Block> PALEOGOURD_BLOCK = CachedSupplier.of(BuiltInRegistries.BLOCK, PALEOGOURD_BLOCK_ID);
@@ -72,12 +71,12 @@ public class Content implements IContentProvider {
     public static final TagKey<Item> PHILOSOPHER_REAGENTS = TagKey.create(Registries.ITEM, PrimordialHarvest.id("philosopher_reagents"));
 
     @Override
-    public String contentNamespace() {
+    public String namespace() {
         return PrimordialHarvest.MOD_ID;
     }
 
     @Override
-    public void registerItemTabs(RegisterItemTab registry) {
+    public void defineCreativeTabs(CreativeModeTabAdapter registry) {
         registry.add("items", () -> PALEOGOURD_FRUIT.get().getDefaultInstance(), (params, out) -> {
             out.accept(PALEOGOURD_SEED.get());
             out.accept(PALEOGOURD_FRUIT.get());
@@ -89,34 +88,33 @@ public class Content implements IContentProvider {
     }
 
     @Override
-    public void registerBlocks(Register<Block> registry) {
-        registry.add(PALEOGOURD_BLOCK_ID, new PaleogourdBlock());
-        registry.add(SPIRESHUCK_BLOCK_ID, new SpireshuckBlock());
-        registry.add(RUMBLEPEA_BLOCK_ID, new RumblepeaBlock());
-        registry.add(BLOOD_CAULDRON_BLOCK_ID, new BloodCauldronBlock());
+    public void defineBlocks(BlockRegistryAdapter registry) {
+        registry.add(PALEOGOURD_BLOCK_ID.getPath(), new PaleogourdBlock());
+        registry.add(SPIRESHUCK_BLOCK_ID.getPath(), new SpireshuckBlock());
+        registry.add(RUMBLEPEA_BLOCK_ID.getPath(), new RumblepeaBlock());
+        registry.add(BLOOD_CAULDRON_BLOCK_ID.getPath(), new BloodCauldronBlock());
     }
 
     @Override
-    public void registerItems(RegisterItem registry) {
-        registry.add(PALEOGOURD_SEED_ID, new ItemNameBlockItem(PALEOGOURD_BLOCK.get(), new Item.Properties()));
-        registry.add(PALEOGOURD_FRUIT_ID, new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.6f).effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300), 0.1f).build())));
-        registry.add(SPIRESHUCK_SEED_ID, new ItemNameBlockItem(SPIRESHUCK_BLOCK.get(), new Item.Properties()));
-        registry.add(SPIRESHUCK_FRUIT_ID, new RumblepeaFruitItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.2f).build())));
-        registry.add(RUMBLEPEA_SEED_ID, new ItemNameBlockItem(RUMBLEPEA_BLOCK.get(), new Item.Properties()));
-        registry.add(RUMBLEPEA_FRUIT_ID, new RumblepeaFruitItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.4f).build())));
-
+    public void defineItems(GameRegistryAdapter<Item> registry) {
+        registry.add(PALEOGOURD_SEED_ID.getPath(), new ItemNameBlockItem(PALEOGOURD_BLOCK.get(), new Item.Properties()));
+        registry.add(PALEOGOURD_FRUIT_ID.getPath(), new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.6f).effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300), 0.1f).build())));
+        registry.add(SPIRESHUCK_SEED_ID.getPath(), new ItemNameBlockItem(SPIRESHUCK_BLOCK.get(), new Item.Properties()));
+        registry.add(SPIRESHUCK_FRUIT_ID.getPath(), new RumblepeaFruitItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.2f).build())));
+        registry.add(RUMBLEPEA_SEED_ID.getPath(), new ItemNameBlockItem(RUMBLEPEA_BLOCK.get(), new Item.Properties()));
+        registry.add(RUMBLEPEA_FRUIT_ID.getPath(), new RumblepeaFruitItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.4f).build())));
         addBloodRecipe(Items.COPPER_INGOT, new ItemStack(Items.GOLD_INGOT));
     }
 
     @Override
-    public void registerPotions(Register<Potion> registry) {
+    public void definePotions(GameRegistryAdapter<Potion> registry) {
         registry.add(PrimordialHarvest.MOD_ID + ".resistance", new Potion(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1800)));
         registry.add(PrimordialHarvest.MOD_ID + ".long_resistance", new Potion(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 4800)));
         registry.add(PrimordialHarvest.MOD_ID + ".strong_resistance", new Potion(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1800, 1)));
     }
 
     @Override
-    public void registerBrewing(PotionBrewing.Builder registry) {
+    public void defineBrews(PotionBrewing.Builder registry) {
         final Holder<Potion> resistance = BuiltInRegistries.POTION.getHolderOrThrow(ResourceKey.create(Registries.POTION, PrimordialHarvest.id(PrimordialHarvest.MOD_ID + ".resistance")));
         final Holder<Potion> long_resistance = BuiltInRegistries.POTION.getHolderOrThrow(ResourceKey.create(Registries.POTION, PrimordialHarvest.id(PrimordialHarvest.MOD_ID + ".long_resistance")));
         final Holder<Potion> strong_resistance = BuiltInRegistries.POTION.getHolderOrThrow(ResourceKey.create(Registries.POTION, PrimordialHarvest.id(PrimordialHarvest.MOD_ID + ".strong_resistance")));
@@ -127,18 +125,18 @@ public class Content implements IContentProvider {
     }
 
     @Override
-    public void registerLootPoolAdditions(RegisterLootPoolAdditions registry) {
+    public void defineLootPoolAdditions(LootPoolAdditionAdapter registry) {
         registry.add(PALEOGOURD_SEED_ID.getPath(), PoolTarget.SNIFFER_DIGGING, PALEOGOURD_SEED.get(), 1);
         registry.add(SPIRESHUCK_SEED_ID.getPath(), PoolTarget.SNIFFER_DIGGING, SPIRESHUCK_SEED.get(), 1);
         registry.add(RUMBLEPEA_SEED_ID.getPath(), PoolTarget.SNIFFER_DIGGING, RUMBLEPEA_SEED.get(), 1);
     }
 
     @Override
-    public void bindRenderLayers(BiConsumer<Block, RenderType> registry) {
-        registry.accept(PALEOGOURD_BLOCK.get(), RenderType.cutout());
-        registry.accept(SPIRESHUCK_BLOCK.get(), RenderType.cutout());
-        registry.accept(RUMBLEPEA_BLOCK.get(), RenderType.cutout());
-        registry.accept(BLOOD_CAULDRON_BLOCK.get(), RenderType.cutout());
+    public void defineBlockRenderTypes(BlockRenderTypeAdapter registry) {
+        registry.add(PALEOGOURD_BLOCK.get(), RenderType.cutout());
+        registry.add(SPIRESHUCK_BLOCK.get(), RenderType.cutout());
+        registry.add(RUMBLEPEA_BLOCK.get(), RenderType.cutout());
+        registry.add(BLOOD_CAULDRON_BLOCK.get(), RenderType.cutout());
     }
 
     public static void addBloodRecipe(Item input, ItemStack output) {
